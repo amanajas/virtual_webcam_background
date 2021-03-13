@@ -29,9 +29,37 @@ The `exclusive_caps` option is needed by some programs, such as chromium.
 Then copy `config.yaml.example` to `config.yaml` and edit the config as needed and run
 the `virtual_webcam.py` script.
 
-If you have a Nvidia graphics card, you may want to install CUDA for better performance.
+If you have Nvidia graphics card, you may want to install CUDA for better performance.
+
+### Linux
+```bash
+sudo apt install nvidia-cuda-toolkit
+```
 
 ## Configuration
+
+The *yaml* file have the following structure:
+
+```yaml
+segmentation_threshold: 0.75
+multiplier: 1.0
+blur: 15
+erode: 10
+dilate: 8
+fps: 60
+virtual_video_device: "/dev/video2"
+real_video_device: "/dev/video0"
+average_masks: 1
+mjpeg: False
+internal_resolution: 0.4
+layers:
+  #- "empty": [["image", "images/star_wars.jpg"]]
+  - input: [["blur", 10]]
+  - "foreground": []
+```
+> Note: Comment the **input** tag in *layers* and uncomment the **empty** tag for a background image.
+
+> Note2: The emails are in the **images** folder :)
 
 To configure the virtual webcam, edit `config.yaml`. Most options are applied instantly,
 except for `width` and `height` as the webcam must be reinitialized to change them and

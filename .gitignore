@@ -2,5 +2,8 @@ bodypix_mobilenet_float_025_model-stride16
 bodypix_mobilenet_float_050_model-stride16
 bodypix_mobilenet_float_075_model-stride16
 bodypix_mobilenet_float_100_model-stride16
+bodypix_resnet50_float_model-stride16
+bodypix_resnet50_quant2_model-stride16
 config.yaml
 __pycache__
+venv/
