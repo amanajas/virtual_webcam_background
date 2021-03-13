@@ -1,11 +1,15 @@
 segmentation_threshold: 0.75
-blur: 3
+multiplier: 1.0
+blur: 15
 erode: 10
-dilate: 10
-virtual_video_device: "/dev/video0"
-real_video_device: "/dev/video1"
-average_masks: 3
+dilate: 8
+fps: 60
+virtual_video_device: "/dev/video2"
+real_video_device: "/dev/video0"
+average_masks: 1
 mjpeg: False
+internal_resolution: 0.4
 layers:
-  - "empty": [["image", "background.jpg"]]
+  #- "empty": [["image", "images/star_wars.jpg"]]
+  - input: [["blur", 10]]
   - "foreground": []
